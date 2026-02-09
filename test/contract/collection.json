@@ -1,0 +1,1740 @@
+{
+  "_": {
+    "postman_id": "3be24de0-41ff-4aa7-85db-8796b9db6bf0"
+  },
+  "item": [
+    {
+      "id": "aea37896-fe9e-4167-af4d-f76791c38968",
+      "name": "Unconditional Call Forwarding information retrieval",
+      "description": {
+        "content": "Provides information on Unconditional Call Forwarding settings for the provided phone number (PhoneNumber)",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "dfd3cc50-d69b-479a-84b0-c7d2f5cdaa60",
+          "name": "Retrieve the information about the status of the unconditional call forwarding service on a phone number (PhoneNumber)",
+          "request": {
+            "name": "Retrieve the information about the status of the unconditional call forwarding service on a phone number (PhoneNumber)",
+            "description": {
+              "content": "This endpoint provides information about the status of the unconditional call forwarding, being active or not.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "unconditional-call-forwardings"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": true,
+                "description": {
+                  "content": "Correlation id for the different services",
+                  "type": "text/plain"
+                },
+                "key": "x-correlator",
+                "value": "b4333c46-49c0-4f62-80d7-f0ef930f1c46"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"phoneNumber\": \"+123456789\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "_": {
+                "postman_previewlanguage": "json"
+              },
+              "id": "769aa7a3-09be-4c05-b97a-492ae23c089c",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unconditional-call-forwardings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": true,
+                    "description": {
+                      "content": "Correlation id for the different services",
+                      "type": "text/plain"
+                    },
+                    "key": "x-correlator",
+                    "value": "b4333c46-49c0-4f62-80d7-f0ef930f1c46"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"phoneNumber\": \"+123456789\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "Correlation id for the different services",
+                    "type": "text/plain"
+                  },
+                  "key": "x-correlator",
+                  "value": "b4333c46-49c0-4f62-80d7-f0ef930f1c46"
+                }
+              ],
+              "body": "{\n  \"active\": true\n}",
+              "cookie": []
+            },
+            {
+              "_": {
+                "postman_previewlanguage": "json"
+              },
+              "id": "efa51251-90ca-412f-ae77-fe510efba2db",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unconditional-call-forwardings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": true,
+                    "description": {
+                      "content": "Correlation id for the different services",
+                      "type": "text/plain"
+                    },
+                    "key": "x-correlator",
+                    "value": "b4333c46-49c0-4f62-80d7-f0ef930f1c46"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"phoneNumber\": \"+123456789\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "Correlation id for the different services",
+                    "type": "text/plain"
+                  },
+                  "key": "x-correlator",
+                  "value": "b4333c46-49c0-4f62-80d7-f0ef930f1c46"
+                }
+              ],
+              "body": "{\n  \"status\": 400,\n  \"code\": \"INVALID_ARGUMENT\",\n  \"message\": \"Client specified an invalid argument, request body or query param.\"\n}",
+              "cookie": []
+            },
+            {
+              "_": {
+                "postman_previewlanguage": "json"
+              },
+              "id": "07c87f9f-ec61-4a7e-b076-ef7fe5a372bb",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unconditional-call-forwardings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": true,
+                    "description": {
+                      "content": "Correlation id for the different services",
+                      "type": "text/plain"
+                    },
+                    "key": "x-correlator",
+                    "value": "b4333c46-49c0-4f62-80d7-f0ef930f1c46"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"phoneNumber\": \"+123456789\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "Correlation id for the different services",
+                    "type": "text/plain"
+                  },
+                  "key": "x-correlator",
+                  "value": "b4333c46-49c0-4f62-80d7-f0ef930f1c46"
+                }
+              ],
+              "body": "{\n  \"status\": 401,\n  \"code\": \"UNAUTHENTICATED\",\n  \"message\": \"Request not authenticated due to missing, invalid, or expired credentials. A new authentication is required.\"\n}",
+              "cookie": []
+            },
+            {
+              "_": {
+                "postman_previewlanguage": "json"
+              },
+              "id": "ad535f6e-2dd6-4d00-b4fa-f0b43424ee5f",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unconditional-call-forwardings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": true,
+                    "description": {
+                      "content": "Correlation id for the different services",
+                      "type": "text/plain"
+                    },
+                    "key": "x-correlator",
+                    "value": "b4333c46-49c0-4f62-80d7-f0ef930f1c46"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"phoneNumber\": \"+123456789\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "Correlation id for the different services",
+                    "type": "text/plain"
+                  },
+                  "key": "x-correlator",
+                  "value": "b4333c46-49c0-4f62-80d7-f0ef930f1c46"
+                }
+              ],
+              "body": "{\n  \"status\": 403,\n  \"code\": \"PERMISSION_DENIED\",\n  \"message\": \"Client does not have sufficient permissions to perform this action.\"\n}",
+              "cookie": []
+            },
+            {
+              "_": {
+                "postman_previewlanguage": "json"
+              },
+              "id": "c7f5a5ae-97f1-4a0f-8b1d-90678d7d12d7",
+              "name": "GENERIC_404_NOT_FOUND",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unconditional-call-forwardings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": true,
+                    "description": {
+                      "content": "Correlation id for the different services",
+                      "type": "text/plain"
+                    },
+                    "key": "x-correlator",
+                    "value": "b4333c46-49c0-4f62-80d7-f0ef930f1c46"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"phoneNumber\": \"+123456789\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "Correlation id for the different services",
+                    "type": "text/plain"
+                  },
+                  "key": "x-correlator",
+                  "value": "b4333c46-49c0-4f62-80d7-f0ef930f1c46"
+                }
+              ],
+              "body": "{\n  \"status\": 404,\n  \"code\": \"NOT_FOUND\",\n  \"message\": \"The specified resource is not found.\"\n}",
+              "cookie": []
+            },
+            {
+              "_": {
+                "postman_previewlanguage": "json"
+              },
+              "id": "548ead21-b637-47ab-9624-33b127a0076b",
+              "name": "GENERIC_404_IDENTIFIER_NOT_FOUND",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unconditional-call-forwardings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": true,
+                    "description": {
+                      "content": "Correlation id for the different services",
+                      "type": "text/plain"
+                    },
+                    "key": "x-correlator",
+                    "value": "b4333c46-49c0-4f62-80d7-f0ef930f1c46"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"phoneNumber\": \"+123456789\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "Correlation id for the different services",
+                    "type": "text/plain"
+                  },
+                  "key": "x-correlator",
+                  "value": "b4333c46-49c0-4f62-80d7-f0ef930f1c46"
+                }
+              ],
+              "body": "{\n  \"status\": 404,\n  \"code\": \"IDENTIFIER_NOT_FOUND\",\n  \"message\": \"Device identifier not found.\"\n}",
+              "cookie": []
+            },
+            {
+              "_": {
+                "postman_previewlanguage": "json"
+              },
+              "id": "d114c1c2-fdad-49f0-ae7e-2b995c5137a7",
+              "name": "GENERIC_422_SERVICE_NOT_APPLICABLE",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unconditional-call-forwardings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": true,
+                    "description": {
+                      "content": "Correlation id for the different services",
+                      "type": "text/plain"
+                    },
+                    "key": "x-correlator",
+                    "value": "b4333c46-49c0-4f62-80d7-f0ef930f1c46"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"phoneNumber\": \"+123456789\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "Correlation id for the different services",
+                    "type": "text/plain"
+                  },
+                  "key": "x-correlator",
+                  "value": "b4333c46-49c0-4f62-80d7-f0ef930f1c46"
+                }
+              ],
+              "body": "{\n  \"status\": 422,\n  \"code\": \"SERVICE_NOT_APPLICABLE\",\n  \"message\": \"The service is not available for the provided identifier.\"\n}",
+              "cookie": []
+            },
+            {
+              "_": {
+                "postman_previewlanguage": "json"
+              },
+              "id": "bbd617bf-c5ae-4e2a-bd2d-76fb68a53df2",
+              "name": "GENERIC_422_MISSING_IDENTIFIER",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unconditional-call-forwardings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": true,
+                    "description": {
+                      "content": "Correlation id for the different services",
+                      "type": "text/plain"
+                    },
+                    "key": "x-correlator",
+                    "value": "b4333c46-49c0-4f62-80d7-f0ef930f1c46"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"phoneNumber\": \"+123456789\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "Correlation id for the different services",
+                    "type": "text/plain"
+                  },
+                  "key": "x-correlator",
+                  "value": "b4333c46-49c0-4f62-80d7-f0ef930f1c46"
+                }
+              ],
+              "body": "{\n  \"status\": 422,\n  \"code\": \"MISSING_IDENTIFIER\",\n  \"message\": \"The phone number cannot be identified.\"\n}",
+              "cookie": []
+            },
+            {
+              "_": {
+                "postman_previewlanguage": "json"
+              },
+              "id": "08c8776c-f62c-48fc-9718-086a49afec4b",
+              "name": "GENERIC_422_UNNECESSARY_IDENTIFIER",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unconditional-call-forwardings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": true,
+                    "description": {
+                      "content": "Correlation id for the different services",
+                      "type": "text/plain"
+                    },
+                    "key": "x-correlator",
+                    "value": "b4333c46-49c0-4f62-80d7-f0ef930f1c46"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"phoneNumber\": \"+123456789\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "Correlation id for the different services",
+                    "type": "text/plain"
+                  },
+                  "key": "x-correlator",
+                  "value": "b4333c46-49c0-4f62-80d7-f0ef930f1c46"
+                }
+              ],
+              "body": "{\n  \"status\": 422,\n  \"code\": \"UNNECESSARY_IDENTIFIER\",\n  \"message\": \"The phone number is already identified by the access token.\"\n}",
+              "cookie": []
+            },
+            {
+              "_": {
+                "postman_previewlanguage": "json"
+              },
+              "id": "98d018aa-6841-4f10-a7f7-c03772eee498",
+              "name": "GENERIC_429_QUOTA_EXCEEDED",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unconditional-call-forwardings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": true,
+                    "description": {
+                      "content": "Correlation id for the different services",
+                      "type": "text/plain"
+                    },
+                    "key": "x-correlator",
+                    "value": "b4333c46-49c0-4f62-80d7-f0ef930f1c46"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"phoneNumber\": \"+123456789\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "Correlation id for the different services",
+                    "type": "text/plain"
+                  },
+                  "key": "x-correlator",
+                  "value": "b4333c46-49c0-4f62-80d7-f0ef930f1c46"
+                }
+              ],
+              "body": "{\n  \"status\": 429,\n  \"code\": \"QUOTA_EXCEEDED\",\n  \"message\": \"Out of resource quota.\"\n}",
+              "cookie": []
+            },
+            {
+              "_": {
+                "postman_previewlanguage": "json"
+              },
+              "id": "0eec1d71-b89b-46a6-9ec8-ea4e51920f40",
+              "name": "GENERIC_429_TOO_MANY_REQUESTS",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "unconditional-call-forwardings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": true,
+                    "description": {
+                      "content": "Correlation id for the different services",
+                      "type": "text/plain"
+                    },
+                    "key": "x-correlator",
+                    "value": "b4333c46-49c0-4f62-80d7-f0ef930f1c46"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"phoneNumber\": \"+123456789\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "Correlation id for the different services",
+                    "type": "text/plain"
+                  },
+                  "key": "x-correlator",
+                  "value": "b4333c46-49c0-4f62-80d7-f0ef930f1c46"
+                }
+              ],
+              "body": "{\n  \"status\": 429,\n  \"code\": \"TOO_MANY_REQUESTS\",\n  \"message\": \"Rate limit reached.\"\n}",
+              "cookie": []
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "d2970430-b0ca-40d5-a8a0-fc2284213d79",
+      "name": "Call Forwarding information retrieval",
+      "description": {
+        "content": "Provides information on Call Forwarding settings for the provided phone number (PhoneNumber).",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e0ba24e7-9eab-4e99-9e43-00dd53f0d359",
+          "name": "Retrieve the information about the type of call forwarding service active on a phone number (PhoneNumber)",
+          "request": {
+            "name": "Retrieve the information about the type of call forwarding service active on a phone number (PhoneNumber)",
+            "description": {
+              "content": "This endpoint provides information about which type of call forwarding service is active. More than one service can be active, e.g. conditional and unconditional. This endpoint exceeds the main scope of the Call Forwarding Signal API, for this reason an error code 501 can be returned.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "call-forwardings"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": true,
+                "description": {
+                  "content": "Correlation id for the different services",
+                  "type": "text/plain"
+                },
+                "key": "x-correlator",
+                "value": "b4333c46-49c0-4f62-80d7-f0ef930f1c46"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"phoneNumber\": \"+123456789\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "_": {
+                "postman_previewlanguage": "json"
+              },
+              "id": "692a6b2a-6dbb-40db-a8ca-3a084fd95fe0",
+              "name": "OK.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "call-forwardings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": true,
+                    "description": {
+                      "content": "Correlation id for the different services",
+                      "type": "text/plain"
+                    },
+                    "key": "x-correlator",
+                    "value": "b4333c46-49c0-4f62-80d7-f0ef930f1c46"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"phoneNumber\": \"+123456789\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "Correlation id for the different services",
+                    "type": "text/plain"
+                  },
+                  "key": "x-correlator",
+                  "value": "b4333c46-49c0-4f62-80d7-f0ef930f1c46"
+                }
+              ],
+              "body": "[\n  \"unconditional\",\n  \"conditional_busy\",\n  \"conditional_no_answer\"\n]",
+              "cookie": []
+            },
+            {
+              "_": {
+                "postman_previewlanguage": "json"
+              },
+              "id": "084290b6-fc7c-433d-8a23-b69e42939bf0",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "call-forwardings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": true,
+                    "description": {
+                      "content": "Correlation id for the different services",
+                      "type": "text/plain"
+                    },
+                    "key": "x-correlator",
+                    "value": "b4333c46-49c0-4f62-80d7-f0ef930f1c46"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"phoneNumber\": \"+123456789\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "Correlation id for the different services",
+                    "type": "text/plain"
+                  },
+                  "key": "x-correlator",
+                  "value": "b4333c46-49c0-4f62-80d7-f0ef930f1c46"
+                }
+              ],
+              "body": "{\n  \"status\": 400,\n  \"code\": \"INVALID_ARGUMENT\",\n  \"message\": \"Client specified an invalid argument, request body or query param.\"\n}",
+              "cookie": []
+            },
+            {
+              "_": {
+                "postman_previewlanguage": "json"
+              },
+              "id": "f6e7d3c3-1f1c-4756-bea2-981cbeb1153c",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "call-forwardings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": true,
+                    "description": {
+                      "content": "Correlation id for the different services",
+                      "type": "text/plain"
+                    },
+                    "key": "x-correlator",
+                    "value": "b4333c46-49c0-4f62-80d7-f0ef930f1c46"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"phoneNumber\": \"+123456789\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "Correlation id for the different services",
+                    "type": "text/plain"
+                  },
+                  "key": "x-correlator",
+                  "value": "b4333c46-49c0-4f62-80d7-f0ef930f1c46"
+                }
+              ],
+              "body": "{\n  \"status\": 401,\n  \"code\": \"UNAUTHENTICATED\",\n  \"message\": \"Request not authenticated due to missing, invalid, or expired credentials. A new authentication is required.\"\n}",
+              "cookie": []
+            },
+            {
+              "_": {
+                "postman_previewlanguage": "json"
+              },
+              "id": "562fa254-efcf-4da0-9221-b348f7954a4d",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "call-forwardings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": true,
+                    "description": {
+                      "content": "Correlation id for the different services",
+                      "type": "text/plain"
+                    },
+                    "key": "x-correlator",
+                    "value": "b4333c46-49c0-4f62-80d7-f0ef930f1c46"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"phoneNumber\": \"+123456789\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "Correlation id for the different services",
+                    "type": "text/plain"
+                  },
+                  "key": "x-correlator",
+                  "value": "b4333c46-49c0-4f62-80d7-f0ef930f1c46"
+                }
+              ],
+              "body": "{\n  \"status\": 403,\n  \"code\": \"PERMISSION_DENIED\",\n  \"message\": \"Client does not have sufficient permissions to perform this action.\"\n}",
+              "cookie": []
+            },
+            {
+              "_": {
+                "postman_previewlanguage": "json"
+              },
+              "id": "1c9d9c4b-8a05-4cd7-b278-3359d47fe281",
+              "name": "GENERIC_404_NOT_FOUND",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "call-forwardings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": true,
+                    "description": {
+                      "content": "Correlation id for the different services",
+                      "type": "text/plain"
+                    },
+                    "key": "x-correlator",
+                    "value": "b4333c46-49c0-4f62-80d7-f0ef930f1c46"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"phoneNumber\": \"+123456789\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "Correlation id for the different services",
+                    "type": "text/plain"
+                  },
+                  "key": "x-correlator",
+                  "value": "b4333c46-49c0-4f62-80d7-f0ef930f1c46"
+                }
+              ],
+              "body": "{\n  \"status\": 404,\n  \"code\": \"NOT_FOUND\",\n  \"message\": \"The specified resource is not found.\"\n}",
+              "cookie": []
+            },
+            {
+              "_": {
+                "postman_previewlanguage": "json"
+              },
+              "id": "3f04d8e2-0e78-48e4-8d5a-319774ea6c5b",
+              "name": "GENERIC_404_IDENTIFIER_NOT_FOUND",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "call-forwardings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": true,
+                    "description": {
+                      "content": "Correlation id for the different services",
+                      "type": "text/plain"
+                    },
+                    "key": "x-correlator",
+                    "value": "b4333c46-49c0-4f62-80d7-f0ef930f1c46"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"phoneNumber\": \"+123456789\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "Correlation id for the different services",
+                    "type": "text/plain"
+                  },
+                  "key": "x-correlator",
+                  "value": "b4333c46-49c0-4f62-80d7-f0ef930f1c46"
+                }
+              ],
+              "body": "{\n  \"status\": 404,\n  \"code\": \"IDENTIFIER_NOT_FOUND\",\n  \"message\": \"Device identifier not found.\"\n}",
+              "cookie": []
+            },
+            {
+              "_": {
+                "postman_previewlanguage": "json"
+              },
+              "id": "58f90dc7-0711-4df4-8c4f-03da9990952a",
+              "name": "GENERIC_422_SERVICE_NOT_APPLICABLE",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "call-forwardings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": true,
+                    "description": {
+                      "content": "Correlation id for the different services",
+                      "type": "text/plain"
+                    },
+                    "key": "x-correlator",
+                    "value": "b4333c46-49c0-4f62-80d7-f0ef930f1c46"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"phoneNumber\": \"+123456789\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "Correlation id for the different services",
+                    "type": "text/plain"
+                  },
+                  "key": "x-correlator",
+                  "value": "b4333c46-49c0-4f62-80d7-f0ef930f1c46"
+                }
+              ],
+              "body": "{\n  \"status\": 422,\n  \"code\": \"SERVICE_NOT_APPLICABLE\",\n  \"message\": \"The service is not available for the provided identifier.\"\n}",
+              "cookie": []
+            },
+            {
+              "_": {
+                "postman_previewlanguage": "json"
+              },
+              "id": "b93892f1-1442-4c28-965e-cb7e0e10b4a5",
+              "name": "GENERIC_422_MISSING_IDENTIFIER",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "call-forwardings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": true,
+                    "description": {
+                      "content": "Correlation id for the different services",
+                      "type": "text/plain"
+                    },
+                    "key": "x-correlator",
+                    "value": "b4333c46-49c0-4f62-80d7-f0ef930f1c46"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"phoneNumber\": \"+123456789\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "Correlation id for the different services",
+                    "type": "text/plain"
+                  },
+                  "key": "x-correlator",
+                  "value": "b4333c46-49c0-4f62-80d7-f0ef930f1c46"
+                }
+              ],
+              "body": "{\n  \"status\": 422,\n  \"code\": \"MISSING_IDENTIFIER\",\n  \"message\": \"The phone number cannot be identified.\"\n}",
+              "cookie": []
+            },
+            {
+              "_": {
+                "postman_previewlanguage": "json"
+              },
+              "id": "e1773247-07e2-48ff-b0a4-28e729c86256",
+              "name": "GENERIC_422_UNNECESSARY_IDENTIFIER",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "call-forwardings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": true,
+                    "description": {
+                      "content": "Correlation id for the different services",
+                      "type": "text/plain"
+                    },
+                    "key": "x-correlator",
+                    "value": "b4333c46-49c0-4f62-80d7-f0ef930f1c46"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"phoneNumber\": \"+123456789\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "Correlation id for the different services",
+                    "type": "text/plain"
+                  },
+                  "key": "x-correlator",
+                  "value": "b4333c46-49c0-4f62-80d7-f0ef930f1c46"
+                }
+              ],
+              "body": "{\n  \"status\": 422,\n  \"code\": \"UNNECESSARY_IDENTIFIER\",\n  \"message\": \"The phone number is already identified by the access token.\"\n}",
+              "cookie": []
+            },
+            {
+              "_": {
+                "postman_previewlanguage": "json"
+              },
+              "id": "554504ea-1465-4988-bc60-02862bafd664",
+              "name": "GENERIC_429_QUOTA_EXCEEDED",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "call-forwardings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": true,
+                    "description": {
+                      "content": "Correlation id for the different services",
+                      "type": "text/plain"
+                    },
+                    "key": "x-correlator",
+                    "value": "b4333c46-49c0-4f62-80d7-f0ef930f1c46"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"phoneNumber\": \"+123456789\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "Correlation id for the different services",
+                    "type": "text/plain"
+                  },
+                  "key": "x-correlator",
+                  "value": "b4333c46-49c0-4f62-80d7-f0ef930f1c46"
+                }
+              ],
+              "body": "{\n  \"status\": 429,\n  \"code\": \"QUOTA_EXCEEDED\",\n  \"message\": \"Out of resource quota.\"\n}",
+              "cookie": []
+            },
+            {
+              "_": {
+                "postman_previewlanguage": "json"
+              },
+              "id": "0461792a-928f-4206-8b52-a6d198b6cc61",
+              "name": "GENERIC_429_TOO_MANY_REQUESTS",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "call-forwardings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": true,
+                    "description": {
+                      "content": "Correlation id for the different services",
+                      "type": "text/plain"
+                    },
+                    "key": "x-correlator",
+                    "value": "b4333c46-49c0-4f62-80d7-f0ef930f1c46"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"phoneNumber\": \"+123456789\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "Correlation id for the different services",
+                    "type": "text/plain"
+                  },
+                  "key": "x-correlator",
+                  "value": "b4333c46-49c0-4f62-80d7-f0ef930f1c46"
+                }
+              ],
+              "body": "{\n  \"status\": 429,\n  \"code\": \"TOO_MANY_REQUESTS\",\n  \"message\": \"Rate limit reached.\"\n}",
+              "cookie": []
+            },
+            {
+              "_": {
+                "postman_previewlanguage": "json"
+              },
+              "id": "549a3417-420d-4e50-9a79-7680c4dc95bb",
+              "name": "Not Implemented",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "call-forwardings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": true,
+                    "description": {
+                      "content": "Correlation id for the different services",
+                      "type": "text/plain"
+                    },
+                    "key": "x-correlator",
+                    "value": "b4333c46-49c0-4f62-80d7-f0ef930f1c46"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"phoneNumber\": \"+123456789\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Implemented",
+              "code": 501,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "disabled": true,
+                  "description": {
+                    "content": "Correlation id for the different services",
+                    "type": "text/plain"
+                  },
+                  "key": "x-correlator",
+                  "value": "b4333c46-49c0-4f62-80d7-f0ef930f1c46"
+                }
+              ],
+              "body": "{\n  \"status\": 501,\n  \"code\": \"NOT_IMPLEMENTED\",\n  \"message\": \"This functionality is not implemented yet.\"\n}",
+              "cookie": []
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "id": "01ecf5fc-4fdf-4b70-91fe-5e3941db99aa",
+        "type": "text/javascript",
+        "exec": [
+          "pm.request.headers.add({ key: 'Authorization', value: 'Bearer ' + pm.environment.get('authToken') });"
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "type": "any",
+      "value": "http://localhost:9091",
+      "key": "apiRoot"
+    },
+    {
+      "type": "any",
+      "value": "{{apiRoot}}/call-forwarding-signal/vwip",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "3be24de0-41ff-4aa7-85db-8796b9db6bf0",
+    "name": "Call Forwarding Signal",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "# Overview\nThe Call Forwarding Signal API provides the API Consumer with\ninformation about the status of the Call Forwarding Service on a specific\nphone number. The main scope of the Call Forwarding Signal API is \"anti\nFraud\" to avoid fraudsters to use the Call Forwarding Service to carry\non a scam. Other use cases are anyway supported by the Call Forwarding\nSignal API that also\nprovides additional endpoints to detect the general Call Forwarding\nService settings.\n# Introduction\nThe Call Forwarding Service is provided by the Network to a phone\nnumber. This service redirects the incoming call to that phone number\nto an alternative destination such as another phone number or a voice mail\nsystem. There are two main types of call forwarding settings:\nunconditional and conditional.\nThe Call Forwarding Signal API can be invoked to detect if the unconditional\ncall forwarding service is active. The Call Forwarding Signal API can also\nbe invoked to\nget the general status of the Call Forwarding Service (inactive,\nconditional, unconditional). If conditional call forwarding is active,\nthe different type of settings are returned ('conditional_busy',\n'conditional_not_reachable', 'conditional_no_answer').\n\n**Example use cases:**\n\n[**Bank Frauds**](https://github.com/camaraproject/CallForwardingSignal/discussions/3#discussioncomment-8694420)\n\n[**Alert Interception**](https://github.com/camaraproject/CallForwardingSignal/discussions/3#discussioncomment-8701847)\n\n[**Call Forwarding Verification**](https://github.com/camaraproject/CallForwarding\\Signal/discussions/3#discussioncomment-8915595)\n# Quick Start\nThe Call Forwarding Signal API is a REST API based on the\nCreateCallForwardingSignal resource.\nThis resource can be used, by the API Consumer, to specify the phone number\non which the Call Forwarding Service status must be verified, in case of\ntwo-legged authentication. If three-legged authentication is used the phone\nnumber is instead detected, by the API Producer, from the access token.\n\nBefore starting to use the Call Forwarding API, the developer needs to know\nabout the below specified details:\n\n**phoneNumber**\nThis is the end user phone number. The Call Forwarding Signal API verifies\nif a call forwarding\nservice is active on this phone number. Note: this parameter must be\nmust be provided/valued only in case of two-legged authentication.\nIn case of three-legged authentication the phone number is retrieved by\nthe access token.\n\n**CreateCallForwardingSignal**\nThis is the resource the API Consumer uses to define the phone number to\nbe verified about the status of the Network Call Forwarding service.\n\n**UnconditionalCallForwardingSignal**\nThis is the resource the API Consumer gets back, containing the information\nabout the Unconditional Call Forwarding Service status for the given phone\nnumber (PhoneNumber).\n\n**CallForwardingSignal**\nThis is the resource the API Consumer gets back, containing the information\nabout the general status of the Network Call Forwarding service for the\nspecified phone number.\n\nThe Call Forwarding Signal API provides two endpoints fulfilling the\nfollowing intents:\n- **unconditional-call-forwardings**: Is the unconditional call fwd service\nactive on a specific phone number?\n- **call-forwardings**: Which is the status of the call forwarding for a\nspecific phone number?\n# API Documentation\n## Details\nThe Call Forwarding Signal API is invoked by an API Consumer after the\nConsent Management flow.\n\nThe API Consumer can request the API Producer for the status of the\nUnconditional Call Forwarding service using the\nunconditional-call-forwardings POST method. A boolean, with the information\nabout the activation status of the call forwarding service, will be\nprovided back via the UnconditionalCallForwardingSignal resource.\n\nThe API Consumer can also request the API Producer for the generic status of\nthe Call Forwarding service using the call-forwardings POST method. An array\nof strings with the information of the type of active call forwarding\nservices will be provided back via the CallForwardingSignal resource.\n# Authorization and authentication\nThe \"Camara Security and Interoperability Profile\" provides details of how\nan API consumer requests an access token. Please refer to Identity and\nConsent Management\n(https://github.com/camaraproject/IdentityAndConsentManagement/)\nfor the released version of the profile.\n\nThe specific authorization flows to be used will be agreed upon during the\nonboarding process, happening between the API consumer and the API\nprovider, taking into account the declared purpose for accessing the API,\nwhilst also being subject to the prevailing legal framework dictated by\nlocal legislation.\n\nIn cases where personal data is processed by the API and users can\nexercise their rights through mechanisms such as opt-in and/or opt-out,\nthe use of three-legged access tokens is mandatory. This ensures that\nthe API remains in compliance with privacy regulations, upholding the\nprinciples of transparency and user-centric privacy-by-design.\n# Identifying the phone number from the access token\nThis API requires the API consumer to identify a phone number as the\nsubject of the API as follows:\n- When the API is invoked using a two-legged access token, the subject\nwill be identified from the optional `phoneNumber` object field, which\ntherefore MUST be provided.\n- When a three-legged access token is used however, this optional\nidentifier MUST NOT be provided, as the subject will be uniquely\nidentified from the access token.\n\nThis approach simplifies API usage for API consumers using a\nthree-legged access token to invoke the API by relying on the\ninformation that is associated with the access token and was\nidentified during the authentication process.\n## Error handling:\n\n- If the subject cannot be identified from the access token and the\noptional `phoneNumber` object field is not included in the request, then\nthe server will return an error with the\n`422 MISSING_IDENTIFIER` error code.\n\n- If the subject can be identified from the access token and the\noptional `phoneNumber` object field is also included in the request, then\nthe server will return an error with the `422 UNNECESSARY_IDENTIFIER`\nerror code. This will be the case even if the same device is\nidentified by these two methods, as the server is unable to make\nthis comparison.\n\n# Additional CAMARA error responses\nThe list of error codes in this API specification is not exhaustive.\nTherefore the API specification may not document some non-mandatory error\nstatuses as indicated in `CAMARA API Design Guide`.\n\nPlease refer to the `CAMARA_common.yaml` of the Commonalities Release\nassociated to this API version for a complete list of error responses.\nThe applicable Commonalities Release can be identified in the\n`API Readiness Checklist` document associated to this API version.\n\nAs a specific rule, error `501 - NOT_IMPLEMENTED` can be only a possible\nerror response if it is explicitly documented in the API.\n# FAQ's\n(FAQs will be added in a later version of the documentation)\n",
+      "type": "text/plain"
+    }
+  }
+}
