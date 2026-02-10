@@ -39,7 +39,18 @@ yamlFiles.forEach(yamlPath => {
   const relativePath = path.relative(process.cwd(), yamlPath);
   const baseName = path.basename(yamlPath, path.extname(yamlPath));
   const outputPath = path.join(OUTPUT_DIR, `${baseName}.collection.json`);
-  
+
+  // Skip if collection is newer than both the YAML spec and portman config
+  if (fs.existsSync(outputPath)) {
+    const collectionMtime = fs.statSync(outputPath).mtimeMs;
+    const yamlMtime = fs.statSync(yamlPath).mtimeMs;
+    const configMtime = fs.statSync(CONFIG_FILE).mtimeMs;
+    if (collectionMtime > yamlMtime && collectionMtime > configMtime) {
+      console.log(`  ⏭  ${relativePath} (up-to-date, skipping)`);
+      return;
+    }
+  }
+
   console.log(`  📄 ${relativePath}`);
   console.log(`     → ${path.relative(process.cwd(), outputPath)}`);
   

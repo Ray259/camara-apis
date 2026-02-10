@@ -5,10 +5,12 @@ import { AppModule } from './app.module';
 import { GlobalExceptionFilter } from '@/shared/filters/global-exception.filter';
 import { callForwardingSwaggerConfig } from './camara-call-forwarding-signal/call-forwarding-signal.swagger';
 import { customerInsightsSwaggerConfig } from './camara-customer-insights/customer-insights.swagger';
+import { deviceSwapSwaggerConfig } from './camara-device-swap/device-swap.swagger';
 
 const swaggerConfigs = [
   callForwardingSwaggerConfig,
   customerInsightsSwaggerConfig,
+  deviceSwapSwaggerConfig,
 ];
 
 async function bootstrap() {
@@ -35,6 +37,7 @@ async function bootstrap() {
   console.log(`CAMARA API server running on port ${PORT}`);
   console.log(`Call Forwarding Signal: http://localhost:${PORT}/call-forwarding-signal/vwip`);
   console.log(`Customer Insights: http://localhost:${PORT}/customer-insights/vwip`);
+  console.log(`Device Swap: http://localhost:${PORT}/device-swap/vwip`);
   console.log(`Health check: http://localhost:${PORT}/health`);
 }
 bootstrap();

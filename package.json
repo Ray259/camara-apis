@@ -18,8 +18,9 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
-    "test:contract": "node test/contract/generate-token.js && newman run test/contract/call-forwarding-signal.collection.json -e test/contract/environment.json",
-    "contract:generate": "node test/contract/generate-collections.js"
+    "test:contract": "node test/contract/run-contract-tests.js",
+    "contract:generate": "node test/contract/generate-collections.js",
+    "prepare": "husky"
   },
   "dependencies": {
     "@nestjs/common": "^10.0.0",
