@@ -14,8 +14,7 @@ import { JwtAuthGuard } from '@/shared/guards/jwt-auth.guard';
 import { PhoneIdentifierGuard } from '@/shared/guards/phone-identifier.guard';
 import { AuthenticatedRequest } from '@/shared/types/request.types';
 import { DeviceSwapInfo, CheckDeviceSwapInfo } from '../types/device-swap.types';
-import { PostRetrieveDateDoc } from '../docs/retrieve-date.doc';
-import { PostCheckDoc } from '../docs/check.doc';
+import { PostRetrieveDateDoc, PostCheckDoc } from '../docs/docs';
 
 @ApiTags('Device Swap')
 @ApiBearerAuth()

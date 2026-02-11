@@ -4,15 +4,15 @@ import {
   ApiResponse,
   ApiBody,
 } from '@nestjs/swagger';
-import { CreateDeviceSwapDateDto } from '../dtos/create-device-swap-date.dto';
+import { CreateSimSwapDateDto } from '../dtos/create-sim-swap-date.dto';
 
 export function PostRetrieveDateDoc() {
   return applyDecorators(
-    ApiOperation({ summary: 'Get last device swap date' }),
-    ApiBody({ type: CreateDeviceSwapDateDto }),
+    ApiOperation({ summary: 'Get last SIM swap date' }),
+    ApiBody({ type: CreateSimSwapDateDto }),
     ApiResponse({
       status: 200,
-      description: 'Contains information about Device swap change',
+      description: 'Contains information about SIM swap change',
     }),
     ApiResponse({ status: 400, description: 'INVALID_ARGUMENT' }),
     ApiResponse({ status: 401, description: 'UNAUTHENTICATED' }),

@@ -16,8 +16,7 @@ import {
   CallForwardingStatus,
   UnconditionalCallForwardingResponse,
 } from '../types/call-forwarding.types';
-import { PostUnconditionalCallForwardingsDoc } from '../docs/unconditional-call-forwardings.doc';
-import { PostCallForwardingsDoc } from '../docs/call-forwardings.doc';
+import { PostUnconditionalCallForwardingsDoc, PostCallForwardingsDoc } from '../docs/docs';
 
 @ApiTags('Call Forwarding Signal')
 @ApiBearerAuth()

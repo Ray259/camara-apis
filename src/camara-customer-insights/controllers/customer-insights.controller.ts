@@ -13,7 +13,7 @@ import { ScoringResponseDto } from '../dtos/scoring-response.dto';
 import { JwtAuthGuard } from '@/shared/guards/jwt-auth.guard';
 import { PhoneIdentifierGuard } from '@/shared/guards/phone-identifier.guard';
 import { AuthenticatedRequest } from '@/shared/types/request.types';
-import { RetrieveScoringDoc } from '../docs/retrieve-scoring.doc';
+import { RetrieveScoringDoc } from '../docs/docs';
 
 @ApiTags('Scoring')
 @ApiBearerAuth()
