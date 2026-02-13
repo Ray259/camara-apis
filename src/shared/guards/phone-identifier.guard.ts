@@ -11,6 +11,7 @@ export class PhoneIdentifierGuard implements CanActivate {
     // THREE-LEGGED: sub starts with tel: or operatortoken:
     if (sub && (sub.startsWith('tel:') || sub.startsWith('operatortoken:'))) {
       if (request.body?.phoneNumber) {
+        // demo err
         throw new ApiException(
           422,
           ErrorCode.UNNECESSARY_IDENTIFIER,
@@ -20,6 +21,7 @@ export class PhoneIdentifierGuard implements CanActivate {
       const phone = sub.startsWith('tel:') ? sub.slice(4) : '';
       request.phoneIdentifier = phone;
     } else if (!request.body?.phoneNumber) {
+      // demo err
       throw new ApiException(
         422,
         ErrorCode.MISSING_IDENTIFIER,

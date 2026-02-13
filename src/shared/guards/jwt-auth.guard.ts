@@ -15,7 +15,7 @@ export class JwtAuthGuard implements CanActivate {
       throw new ApiException(
         401,
         ErrorCode.UNAUTHENTICATED,
-        'Request not authenticated due to missing, invalid, or expired credentials.',
+        'Request not authenticated due to missing, invalid, or expired credentials. A new authentication is required.',
       );
     }
 
@@ -24,7 +24,7 @@ export class JwtAuthGuard implements CanActivate {
       throw new ApiException(
         401,
         ErrorCode.UNAUTHENTICATED,
-        'Request not authenticated due to missing, invalid, or expired credentials.',
+        'Request not authenticated due to missing, invalid, or expired credentials. A new authentication is required.',
       );
     }
 
@@ -36,7 +36,7 @@ export class JwtAuthGuard implements CanActivate {
       throw new ApiException(
         401,
         ErrorCode.UNAUTHENTICATED,
-        'Request not authenticated due to missing, invalid, or expired credentials.',
+        'Request not authenticated due to missing, invalid, or expired credentials. A new authentication is required.',
       );
     }
   }

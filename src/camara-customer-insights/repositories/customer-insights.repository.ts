@@ -6,7 +6,10 @@ import {
 } from '../types/customer-insights.types';
 
 export interface ICustomerInsightsRepository {
-  getScoring(phoneNumber: string, scoringType: ScoringType): Promise<ScoringResponse>;
+  getScoring(
+    phoneNumber: string,
+    scoringType: ScoringType,
+  ): Promise<ScoringResponse>;
   phoneNumberExists(phoneNumber: string): Promise<boolean>;
   validateIdDocument(phoneNumber: string, idDocument: string): Promise<boolean>;
   isServiceApplicable(phoneNumber: string): Promise<boolean>;
@@ -50,7 +53,10 @@ export class InMemoryCustomerInsightsRepository implements ICustomerInsightsRepo
     return this.records.some((r) => r.phoneNumber === phoneNumber);
   }
 
-  async validateIdDocument(phoneNumber: string, idDocument: string): Promise<boolean> {
+  async validateIdDocument(
+    phoneNumber: string,
+    idDocument: string,
+  ): Promise<boolean> {
     const record = this.records.find((r) => r.phoneNumber === phoneNumber);
     if (!record || !record.idDocument) {
       return false;
@@ -63,16 +69,20 @@ export class InMemoryCustomerInsightsRepository implements ICustomerInsightsRepo
     return record?.serviceApplicable ?? false;
   }
 
-  async getScoring(phoneNumber: string, scoringType: ScoringType): Promise<ScoringResponse> {
+  async getScoring(
+    phoneNumber: string,
+    scoringType: ScoringType,
+  ): Promise<ScoringResponse> {
     const record = this.records.find((r) => r.phoneNumber === phoneNumber);
 
     if (!record) {
       return { scoringType, scoringValue: 0 };
     }
 
-    const scoringValue = scoringType === 'gaugeMetric'
-      ? record.gaugeMetricScore
-      : record.veritasIndexScore;
+    const scoringValue =
+      scoringType === 'gaugeMetric'
+        ? record.gaugeMetricScore
+        : record.veritasIndexScore;
 
     return { scoringType, scoringValue };
   }

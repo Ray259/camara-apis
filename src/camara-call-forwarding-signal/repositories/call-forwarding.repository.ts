@@ -6,7 +6,9 @@ import {
 
 export interface ICallForwardingRepository {
   getUnconditionalStatus(phoneNumber: string): Promise<boolean>;
-  getCallForwardingStatuses(phoneNumber: string): Promise<CallForwardingStatus[]>;
+  getCallForwardingStatuses(
+    phoneNumber: string,
+  ): Promise<CallForwardingStatus[]>;
   phoneNumberExists(phoneNumber: string): Promise<boolean>;
 }
 
@@ -33,7 +35,11 @@ export class InMemoryCallForwardingRepository implements ICallForwardingReposito
     {
       phoneNumber: '+222222222',
       unconditionalActive: true,
-      conditionalStatuses: ['unconditional', 'conditional_busy', 'conditional_not_reachable'],
+      conditionalStatuses: [
+        'unconditional',
+        'conditional_busy',
+        'conditional_not_reachable',
+      ],
     },
   ];
 
@@ -50,7 +56,9 @@ export class InMemoryCallForwardingRepository implements ICallForwardingReposito
     return record?.unconditionalActive ?? false;
   }
 
-  async getCallForwardingStatuses(phoneNumber: string): Promise<CallForwardingStatus[]> {
+  async getCallForwardingStatuses(
+    phoneNumber: string,
+  ): Promise<CallForwardingStatus[]> {
     const record = this.records.find((r) => r.phoneNumber === phoneNumber);
     return record?.conditionalStatuses ?? ['inactive'];
   }

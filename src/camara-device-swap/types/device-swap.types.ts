@@ -10,6 +10,6 @@ export interface CheckDeviceSwapInfo {
 export interface DeviceSwapRecord {
   phoneNumber: string;
   latestDeviceChange: string | null;
-  monitoredPeriod?: number;  
+  monitoredPeriod?: number;
   serviceApplicable: boolean;
 }

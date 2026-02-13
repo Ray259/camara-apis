@@ -1,12 +1,15 @@
 import { Injectable, Inject } from '@nestjs/common';
 import { ApiException } from '@/shared/exceptions/api-exception';
 import { ErrorCode } from '@/shared/exceptions/error-code.enum';
-import { validatePhone } from '@/shared/utils/phone-validation.util';
+import { validatePhone } from '@/shared/utils/phone-format.util';
 import {
   IDeviceSwapRepository,
   DEVICE_SWAP_REPOSITORY,
 } from '../repositories/device-swap.repository';
-import { DeviceSwapInfo, CheckDeviceSwapInfo } from '../types/device-swap.types';
+import {
+  DeviceSwapInfo,
+  CheckDeviceSwapInfo,
+} from '../types/device-swap.types';
 
 const DEFAULT_MAX_AGE = 240;
 
@@ -58,7 +61,10 @@ export class DeviceSwapService {
     phoneIdentifier: string | undefined,
     bodyPhoneNumber: string | undefined,
   ): Promise<DeviceSwapInfo> {
-    const phoneNumber = this.resolvePhoneNumber(phoneIdentifier, bodyPhoneNumber);
+    const phoneNumber = this.resolvePhoneNumber(
+      phoneIdentifier,
+      bodyPhoneNumber,
+    );
 
     validatePhone(phoneNumber);
     await this.ensurePhoneExists(phoneNumber);
@@ -72,7 +78,10 @@ export class DeviceSwapService {
     bodyPhoneNumber: string | undefined,
     maxAge: number | undefined,
   ): Promise<CheckDeviceSwapInfo> {
-    const phoneNumber = this.resolvePhoneNumber(phoneIdentifier, bodyPhoneNumber);
+    const phoneNumber = this.resolvePhoneNumber(
+      phoneIdentifier,
+      bodyPhoneNumber,
+    );
 
     validatePhone(phoneNumber);
     await this.ensurePhoneExists(phoneNumber);

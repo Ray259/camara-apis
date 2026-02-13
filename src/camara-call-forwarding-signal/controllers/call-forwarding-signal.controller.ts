@@ -16,14 +16,19 @@ import {
   CallForwardingStatus,
   UnconditionalCallForwardingResponse,
 } from '../types/call-forwarding.types';
-import { PostUnconditionalCallForwardingsDoc, PostCallForwardingsDoc } from '../docs/docs';
+import {
+  PostUnconditionalCallForwardingsDoc,
+  PostCallForwardingsDoc,
+} from '../docs/docs';
 
 @ApiTags('Call Forwarding Signal')
 @ApiBearerAuth()
 @UseGuards(JwtAuthGuard, PhoneIdentifierGuard)
 @Controller('call-forwarding-signal/vwip')
 export class CallForwardingSignalController {
-  constructor(private readonly callForwardingSignalService: CallForwardingSignalService) {}
+  constructor(
+    private readonly callForwardingSignalService: CallForwardingSignalService,
+  ) {}
 
   @Post('unconditional-call-forwardings')
   @HttpCode(200)
@@ -32,10 +37,11 @@ export class CallForwardingSignalController {
     @Body() dto: CreateCallForwardingSignalDto,
     @Req() req: AuthenticatedRequest,
   ): Promise<UnconditionalCallForwardingResponse> {
-    const active = await this.callForwardingSignalService.checkUnconditionalForwarding(
-      req.phoneIdentifier,
-      dto.phoneNumber,
-    );
+    const active =
+      await this.callForwardingSignalService.checkUnconditionalForwarding(
+        req.phoneIdentifier,
+        dto.phoneNumber,
+      );
     return { active };
   }
 

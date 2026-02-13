@@ -1,7 +1,7 @@
 import { Injectable, Inject } from '@nestjs/common';
 import { ApiException } from '@/shared/exceptions/api-exception';
 import { ErrorCode } from '@/shared/exceptions/error-code.enum';
-import { validatePhone } from '@/shared/utils/phone-validation.util';
+import { validatePhone } from '@/shared/utils/phone-format.util';
 import {
   ISimSwapRepository,
   SIM_SWAP_REPOSITORY,
@@ -34,7 +34,10 @@ export class SimSwapService {
     phoneIdentifier: string | undefined,
     bodyPhoneNumber: string | undefined,
   ): Promise<SimSwapInfo> {
-    const phoneNumber = this.resolvePhoneNumber(phoneIdentifier, bodyPhoneNumber);
+    const phoneNumber = this.resolvePhoneNumber(
+      phoneIdentifier,
+      bodyPhoneNumber,
+    );
 
     validatePhone(phoneNumber);
 

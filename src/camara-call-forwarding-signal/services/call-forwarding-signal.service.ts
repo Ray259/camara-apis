@@ -1,7 +1,7 @@
 import { Injectable, Inject } from '@nestjs/common';
 import { ApiException } from '@/shared/exceptions/api-exception';
 import { ErrorCode } from '@/shared/exceptions/error-code.enum';
-import { validatePhone } from '@/shared/utils/phone-validation.util';
+import { validatePhone } from '@/shared/utils/phone-format.util';
 import {
   ICallForwardingRepository,
   CALL_FORWARDING_REPOSITORY,

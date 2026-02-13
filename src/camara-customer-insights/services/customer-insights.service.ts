@@ -1,7 +1,7 @@
 import { Injectable, Inject } from '@nestjs/common';
 import { ApiException } from '@/shared/exceptions/api-exception';
 import { ErrorCode } from '@/shared/exceptions/error-code.enum';
-import { validatePhone } from '@/shared/utils/phone-validation.util';
+import { validatePhone } from '@/shared/utils/phone-format.util';
 import {
   ICustomerInsightsRepository,
   CUSTOMER_INSIGHTS_REPOSITORY,
@@ -39,7 +39,9 @@ export class CustomerInsightsService {
     }
   }
 
-  private validateScoringType(scoringType: ScoringType | undefined): ScoringType {
+  private validateScoringType(
+    scoringType: ScoringType | undefined,
+  ): ScoringType {
     if (!scoringType) {
       return DEFAULT_SCORING_TYPE;
     }
@@ -64,7 +66,10 @@ export class CustomerInsightsService {
       return;
     }
 
-    const isValid = await this.repository.validateIdDocument(phoneNumber, idDocument);
+    const isValid = await this.repository.validateIdDocument(
+      phoneNumber,
+      idDocument,
+    );
     if (!isValid) {
       throw new ApiException(
         422,

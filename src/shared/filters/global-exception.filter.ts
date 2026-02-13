@@ -25,7 +25,8 @@ export class GlobalExceptionFilter implements ExceptionFilter {
       response.status(400).json({
         status: 400,
         code: ErrorCode.INVALID_ARGUMENT,
-        message: 'Client specified an invalid argument, request body or query param.',
+        message:
+          'Client specified an invalid argument, request body or query param.',
       });
       return;
     }

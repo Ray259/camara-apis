@@ -9,7 +9,8 @@ export class ScoringResponseDto {
   scoringType: ScoringType;
 
   @ApiProperty({
-    description: 'Result of the Scoring analysis expressed in the measure indicated in the scoringType field.',
+    description:
+      'Result of the Scoring analysis expressed in the measure indicated in the scoringType field.',
   })
   scoringValue: number;
 }

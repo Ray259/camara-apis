@@ -1,6 +1,6 @@
 import { ApiPropertyOptional } from '@nestjs/swagger';
 import { IsOptional, Matches } from 'class-validator';
-import { PHONE_REGEX } from '@/shared/utils/phone-validation.util';
+import { PHONE_REGEX } from '@/shared/utils/phone-format.util';
 
 export class CreateCallForwardingSignalDto {
   @ApiPropertyOptional({

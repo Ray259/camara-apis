@@ -1,11 +1,10 @@
-import { Module, NestModule, MiddlewareConsumer } from '@nestjs/common';
+import { Module } from '@nestjs/common';
 import { CallForwardingSignalController } from './controllers/call-forwarding-signal.controller';
 import { CallForwardingSignalService } from './services/call-forwarding-signal.service';
 import {
   InMemoryCallForwardingRepository,
   CALL_FORWARDING_REPOSITORY,
 } from './repositories/call-forwarding.repository';
-import { XCorrelatorMiddleware } from '@/shared/middlewares/x-correlator.middleware';
 
 @Module({
   controllers: [CallForwardingSignalController],
@@ -17,8 +16,4 @@ import { XCorrelatorMiddleware } from '@/shared/middlewares/x-correlator.middlew
     },
   ],
 })
-export class CallForwardingSignalModule implements NestModule {
-  configure(consumer: MiddlewareConsumer) {
-    consumer.apply(XCorrelatorMiddleware).forRoutes('*');
-  }
-}
+export class CallForwardingSignalModule {}

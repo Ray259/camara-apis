@@ -1,4 +1,10 @@
-import { Model, Column, Table, DataType, PrimaryKey } from 'sequelize-typescript';
+import {
+  Model,
+  Column,
+  Table,
+  DataType,
+  PrimaryKey,
+} from 'sequelize-typescript';
 
 @Table({ tableName: 'call_forwardings', timestamps: false })
 export class CallForwardingModel extends Model {

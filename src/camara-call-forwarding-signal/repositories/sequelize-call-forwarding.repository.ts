@@ -21,8 +21,12 @@ export class SequelizeCallForwardingRepository implements ICallForwardingReposit
     return record?.unconditionalActive ?? false;
   }
 
-  async getCallForwardingStatuses(phoneNumber: string): Promise<CallForwardingStatus[]> {
+  async getCallForwardingStatuses(
+    phoneNumber: string,
+  ): Promise<CallForwardingStatus[]> {
     const record = await this.model.findByPk(phoneNumber);
-    return (record?.conditionalStatuses as CallForwardingStatus[]) ?? ['inactive'];
+    return (
+      (record?.conditionalStatuses as CallForwardingStatus[]) ?? ['inactive']
+    );
   }
 }

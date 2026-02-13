@@ -20,7 +20,9 @@ import { RetrieveScoringDoc } from '../docs/docs';
 @UseGuards(JwtAuthGuard, PhoneIdentifierGuard)
 @Controller('customer-insights/vwip')
 export class CustomerInsightsController {
-  constructor(private readonly customerInsightsService: CustomerInsightsService) {}
+  constructor(
+    private readonly customerInsightsService: CustomerInsightsService,
+  ) {}
 
   @Post('scoring/retrieve')
   @HttpCode(200)

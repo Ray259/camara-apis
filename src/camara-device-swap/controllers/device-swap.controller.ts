@@ -13,7 +13,10 @@ import { CreateCheckDeviceSwapDto } from '../dtos/create-check-device-swap.dto';
 import { JwtAuthGuard } from '@/shared/guards/jwt-auth.guard';
 import { PhoneIdentifierGuard } from '@/shared/guards/phone-identifier.guard';
 import { AuthenticatedRequest } from '@/shared/types/request.types';
-import { DeviceSwapInfo, CheckDeviceSwapInfo } from '../types/device-swap.types';
+import {
+  DeviceSwapInfo,
+  CheckDeviceSwapInfo,
+} from '../types/device-swap.types';
 import { PostRetrieveDateDoc, PostCheckDoc } from '../docs/docs';
 
 @ApiTags('Device Swap')
