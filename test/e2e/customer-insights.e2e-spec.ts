@@ -14,7 +14,10 @@ const generateToken = (payload: object, expiresInSeconds = 3600) => {
 
 const twoLeggedToken = generateToken({ iss: 'test-issuer' });
 const threeLeggedToken = generateToken({ sub: 'tel:+123456789' });
-const unknownPhoneToken = generateToken({ sub: 'tel:+999999999', iss: 'test-issuer' });
+const unknownPhoneToken = generateToken({
+  sub: 'tel:+999999999',
+  iss: 'test-issuer',
+});
 const serviceNotApplicableToken = generateToken({ sub: 'tel:+111111111' });
 
 // Expired token
@@ -205,7 +208,9 @@ describe('Customer Insights API (e2e)', () => {
 
         expect(res.status).toBe(422);
         expect(res.body.code).toBe('UNNECESSARY_IDENTIFIER');
-        expect(res.body.message).toBe('The phone number is already identified by the access token.');
+        expect(res.body.message).toBe(
+          'The phone number is already identified by the access token.',
+        );
       });
 
       it('422 SERVICE_NOT_APPLICABLE - service not available for identifier', async () => {
@@ -216,7 +221,9 @@ describe('Customer Insights API (e2e)', () => {
 
         expect(res.status).toBe(422);
         expect(res.body.code).toBe('SERVICE_NOT_APPLICABLE');
-        expect(res.body.message).toBe('The service is not available for the provided identifier.');
+        expect(res.body.message).toBe(
+          'The service is not available for the provided identifier.',
+        );
       });
 
       it('422 CUSTOMER_INSIGHTS.INVALID_IDENTIFIERS - idDocument mismatch', async () => {

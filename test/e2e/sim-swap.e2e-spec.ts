@@ -58,10 +58,13 @@ describe('SIM Swap API (e2e)', () => {
       // But user requested to verify, so let's try it.
       // If credentials aren't set in the test environment, this will fail.
       // Assuming user has .env loaded or variables set.
-      
+
       it('200 - returns latestSimChange (two-legged)', async () => {
         // Only run if real creds exist
-        if (!process.env.SANDBOX_CLIENT_KEY || process.env.SANDBOX_CLIENT_KEY === 'test-key') {
+        if (
+          !process.env.SANDBOX_CLIENT_KEY ||
+          process.env.SANDBOX_CLIENT_KEY === 'test-key'
+        ) {
           console.warn('Skipping test requiring real credentials');
           return;
         }
@@ -78,8 +81,11 @@ describe('SIM Swap API (e2e)', () => {
       }, 10000); // Higher timeout for external call
 
       it('200 - extracts phone from three-legged token (tel:)', async () => {
-        if (!process.env.SANDBOX_CLIENT_KEY || process.env.SANDBOX_CLIENT_KEY === 'test-key') {
-           return;
+        if (
+          !process.env.SANDBOX_CLIENT_KEY ||
+          process.env.SANDBOX_CLIENT_KEY === 'test-key'
+        ) {
+          return;
         }
 
         const res = await request(app.getHttpServer())
@@ -92,7 +98,11 @@ describe('SIM Swap API (e2e)', () => {
       }, 10000);
 
       it('200 - returns x-correlator header when provided', async () => {
-         if (!process.env.SANDBOX_CLIENT_KEY || process.env.SANDBOX_CLIENT_KEY === 'test-key') return;
+        if (
+          !process.env.SANDBOX_CLIENT_KEY ||
+          process.env.SANDBOX_CLIENT_KEY === 'test-key'
+        )
+          return;
 
         const correlator = 'test-correlator-123';
         const res = await request(app.getHttpServer())
@@ -145,18 +155,18 @@ describe('SIM Swap API (e2e)', () => {
         expect(res.status).toBe(422);
         expect(res.body.code).toBe('MISSING_IDENTIFIER');
       });
-      
-      // Note: 422 UNNECESSARY_IDENTIFIER is handled by PhoneIdentifierGuard 
+
+      // Note: 422 UNNECESSARY_IDENTIFIER is handled by PhoneIdentifierGuard
       // which we are using.
       it('422 UNNECESSARY_IDENTIFIER - three-legged with phoneNumber in body', async () => {
         const res = await request(app.getHttpServer())
-           .post(endpoint)
-           .set('Authorization', `Bearer ${threeLeggedToken}`)
-           .send({ phoneNumber: '+447123456789' });
- 
-         expect(res.status).toBe(422);
-         expect(res.body.code).toBe('UNNECESSARY_IDENTIFIER');
-       });
+          .post(endpoint)
+          .set('Authorization', `Bearer ${threeLeggedToken}`)
+          .send({ phoneNumber: '+447123456789' });
+
+        expect(res.status).toBe(422);
+        expect(res.body.code).toBe('UNNECESSARY_IDENTIFIER');
+      });
     });
   });
 });

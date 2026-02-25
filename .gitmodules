@@ -1,0 +1,6 @@
+[submodule "free5gc-compose"]
+	path = free5gc-compose
+	url = https://github.com/free5gc/free5gc-compose
+[submodule "UERANSIM"]
+	path = UERANSIM
+	url = https://github.com/aligungr/UERANSIM
