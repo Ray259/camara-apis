@@ -11,6 +11,11 @@ For now number verification API using free5gc emulator, other APIs using mock da
 
 If running on VMware, need to config port forwarding to expose the emulator to the host machine (nef/db/webui ports)
 
+Get the emulator submodules
+```bash
+git submodule update --init --recursive
+```
+
 ## 1. Start the 5G Core
 
 
