@@ -13,8 +13,20 @@ If running on VMware, need to config port forwarding to expose the emulator to t
 
 ## 1. Start the 5G Core
 
+
 ```bash
+sudo apt update
+sudo apt install -y git make gcc linux-headers-$(uname -r)
+cd gtp5g
+make
+sudo make install
+```
+
+```bash
+sudo apt update
+sudo apt install -y git make gcc linux-headers-$(uname -r)
 cd free5gc-compose
+make base
 docker compose up -d
 ```
 
@@ -33,6 +45,13 @@ WebUI login:
 
 
 ### Register a UE (optional)
+
+```bash
+sudo apt update
+sudo apt install -y make gcc g++ libsctp-dev lksctp-tools iproute2 cmake
+cd UERANSIM
+make
+```
 
 > **Note for VMware setup:**
 > If running inside a VM, need update `UERANSIM/config/free5gc-gnb.yaml`:
