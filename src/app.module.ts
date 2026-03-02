@@ -8,9 +8,11 @@ import { AuthModule } from './auth/auth.module';
 import { NefModule } from './nef/nef.module';
 import { HealthController } from './health/health.controller';
 import { XCorrelatorMiddleware } from '@/shared/middlewares/x-correlator.middleware';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [
+    ConfigModule.forRoot(),
     AuthModule,
     NefModule,
     CallForwardingSignalModule,

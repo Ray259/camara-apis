@@ -1,4 +1,4 @@
-import { Injectable, Inject } from '@nestjs/common';
+import { Injectable, Inject, Logger } from '@nestjs/common';
 import { ApiException } from '@/shared/exceptions/api-exception';
 import { ErrorCode } from '@/shared/exceptions/error-code.enum';
 import { matchPhoneNumber } from '@/shared/utils/phone-format.util';
@@ -10,6 +10,8 @@ import { VerifyPhoneNumberDto } from '../dtos/verify-phone-number.dto';
 
 @Injectable()
 export class NumberVerificationService {
+  private readonly logger = new Logger(NumberVerificationService.name);
+
   constructor(
     @Inject(NUMBER_VERIFICATION_REPOSITORY)
     private readonly repository: INumberVerificationRepository,
@@ -24,6 +26,7 @@ export class NumberVerificationService {
     tokenSub: string | undefined,
   ): Promise<string> {
     if (!tokenSub) {
+      this.logger.warn('resolveNetworkPhone: tokenSub is missing — rejecting request');
       throw new ApiException(
         403,
         ErrorCode[
@@ -32,7 +35,10 @@ export class NumberVerificationService {
         'Client must authenticate via the mobile network to use this service',
       );
     }
-    return this.repository.getNetworkPhoneNumber(tokenSub);
+    this.logger.debug(`resolveNetworkPhone: resolving network phone for sub="${tokenSub}"`);
+    const phone = await this.repository.getNetworkPhoneNumber(tokenSub);
+    this.logger.debug('resolveNetworkPhone: network phone resolved successfully');
+    return phone;
   }
 
   /**
@@ -45,9 +51,11 @@ export class NumberVerificationService {
     tokenSub: string | undefined,
     dto: VerifyPhoneNumberDto,
   ): Promise<boolean> {
+    this.logger.log(`verifyPhoneNumber: incoming request — phoneNumber=${!!dto.phoneNumber}, hashedPhoneNumber=${!!dto.hashedPhoneNumber}`);
     const input = dto.phoneNumber ?? dto.hashedPhoneNumber;
 
     if (!input) {
+      this.logger.warn('verifyPhoneNumber: neither phoneNumber nor hashedPhoneNumber provided');
       // demo err
       throw new ApiException(
         400,
@@ -57,6 +65,7 @@ export class NumberVerificationService {
     }
 
     if (dto.phoneNumber && dto.hashedPhoneNumber) {
+      this.logger.warn('verifyPhoneNumber: both phoneNumber and hashedPhoneNumber provided simultaneously');
       // demo err
       throw new ApiException(
         400,
@@ -65,8 +74,12 @@ export class NumberVerificationService {
       );
     }
 
+    const inputType = dto.phoneNumber ? 'plain' : 'hashed';
+    this.logger.log(`verifyPhoneNumber: comparing ${inputType} phone number against network identity`);
     const networkPhone = await this.resolveNetworkPhone(tokenSub);
-    return matchPhoneNumber(networkPhone, input);
+    const match = matchPhoneNumber(networkPhone, input);
+    this.logger.log(`verifyPhoneNumber: result=${match}`);
+    return match;
   }
 
   /**
@@ -76,6 +89,9 @@ export class NumberVerificationService {
    * end-user's SIM for the current access token.
    */
   async getDevicePhoneNumber(tokenSub: string | undefined): Promise<string> {
-    return this.resolveNetworkPhone(tokenSub);
+    this.logger.log('getDevicePhoneNumber: incoming request');
+    const phone = await this.resolveNetworkPhone(tokenSub);
+    this.logger.log('getDevicePhoneNumber: phone number retrieved successfully');
+    return phone;
   }
 }
