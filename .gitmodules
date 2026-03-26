@@ -7,3 +7,6 @@
 [submodule "gtp5g"]
 	path = gtp5g
 	url = https://github.com/free5gc/gtp5g.git
+[submodule "nef"]
+	path = nef
+	url = https://github.com/Ray259/nef
